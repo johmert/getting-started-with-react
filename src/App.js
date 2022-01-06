@@ -1,6 +1,7 @@
 import "./App.css";
 import Greeting from "./Greeting";
 import GroceryList from "./GroceryList";
+import TodoList from "./TodoList"
 
 function WelcomeBack(props) {
   return <p>Welcome back, {props.name}</p>
@@ -14,15 +15,10 @@ function Notifications({ notifications }) {
   );
 }
 
-function TodoList({todos}){
-  const items = todos.map((item, index) => <li key={index}>{item}</li>);
-  return <ul>{items}</ul>
-}
-
 const todos = [
-  "Finish the Lists & Tables checkpoint",
-  "Clean my desk",
-  "Make lunch"
+  {completed: false, task: "Finish the Lists & Tables checkpoint"},
+  {completed: false, task: "Clean my desk"},
+  {completed: false, task: "Make lunch"}
 ];
 
 
