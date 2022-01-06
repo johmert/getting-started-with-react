@@ -1,3 +1,5 @@
+import "./Notifications.css"
+
 function Notifications({ notifications }) {
     return (
       notifications.length > 0 && (

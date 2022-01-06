@@ -1,3 +1,5 @@
+import "./Greeting.css"
+
 function Greeting({ language }) {
     switch (language) {
         case "es":

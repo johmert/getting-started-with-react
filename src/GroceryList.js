@@ -1,3 +1,5 @@
+import "./GroceryList.css"
+
 function GroceryList({items}){
     const rows = items.map(({quantity, item}, index) => (
         <tr key={index}>

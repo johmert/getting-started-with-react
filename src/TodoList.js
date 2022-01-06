@@ -1,3 +1,5 @@
+import "./TodoList.css"
+
 function TodoList({todos}){
     const rows = todos.map(({completed, task}, index) => (
         <tr key={index}>
