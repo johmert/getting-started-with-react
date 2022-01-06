@@ -1,5 +1,6 @@
 import "./App.css";
 import Greeting from "./Greeting";
+import GroceryList from "./GroceryList";
 
 function WelcomeBack(props) {
   return <p>Welcome back, {props.name}</p>
@@ -31,6 +32,7 @@ function App() {
       Please visit <a href={url}>{linkText}</a>.
     </p>
   );
+  const groceryItems = ["Bananas", "Apples", "Oranges"];
   return (
     <>
     <Greeting language="es" />
@@ -39,6 +41,7 @@ function App() {
     <WelcomeBack name={name}/>
     {element}
     <Notifications notifications={notifications} />
+    <GroceryList items={groceryItems} />
     </>
     );
 }
