@@ -1,11 +1,6 @@
 function GroceryList({items}){
-    return (
-        <ul>
-            {items.map(item => (
-                <li>{item}</li>
-            ))}
-        </ul>
-    );
+    const list = items.map(item => <li>{item}</li>);
+    return <ul>{list}</ul>;
 }
 
 export default GroceryList;
