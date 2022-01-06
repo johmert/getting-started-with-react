@@ -3,7 +3,7 @@ import "./Notifications.css"
 function Notifications({ notifications }) {
     return (
       notifications.length > 0 && (
-        <p>You have {notifications.length} notification(s) today!</p>
+        <p className="notification">You have {notifications.length} notification(s) today!</p>
       )
     );
   }

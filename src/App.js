@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import "./App.css";
 import Greeting from "./Greeting";
 import GroceryList from "./GroceryList";
@@ -30,12 +31,14 @@ const quote = {
 
 const handleClick = () => {
   for(let i=0; i<notifications.length; i++){
-    alert(`Notification ${[i+1]} of ${notifications.length}:${notifications[i]}`);
+    alert(`Notification ${[i+1]} of ${notifications.length}: ${notifications[i]}`);
   }
 };
 
 function App() {
-    return (
+  const [subscribed, setSubscribed] = useState(false);
+  console.log("Subscribed status: ", subscribed);  
+  return (
     <div style={{ border: "1px solid #000", textAlign: "center", borderRadius: "20px" }}>
       <Greeting language="es" />
       <Greeting language="fr" />
@@ -45,6 +48,8 @@ function App() {
       <Quote quote={quote} />
       <Notifications notifications={notifications} />
       <button onClick={handleClick}>View Notifications</button>
+      <p style={{marginTop: "20px"}}>Subcribe for more updates!</p>
+      <button onClick={() => setSubscribed(!subscribed)}>{subscribed ? "Unsubscribe" : "Subscribe"}</button>
       <GroceryList items={groceryItems} />
       <TodoList todos={todos} />
     </div>
