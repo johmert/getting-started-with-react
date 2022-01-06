@@ -1,19 +1,21 @@
 import "./App.css";
 import Greeting from "./Greeting";
 import GroceryList from "./GroceryList";
+import Notifications from "./Notifications";
 import TodoList from "./TodoList"
+import WelcomeBack from "./WelcomeBack";
 
-function WelcomeBack(props) {
-  return <p>Welcome back, {props.name}</p>
-}
-
-function Notifications({ notifications }) {
-  return (
-    notifications.length > 0 && (
-      <p>You have {notifications.length} notification(s) today!</p>
-    )
+const notifications = ["You received a package", "The weather is sunny"];
+const name = "Jessica";
+const url = "https://johmert.github.io/portfolio";
+const linkText = "your portfolio"
+const element = (
+    <p>
+      {" "}
+      Please visit <a href={url}>{linkText}</a>.
+    </p>
   );
-}
+const groceryItems = [{quantity: 6, item: "Bananas"}, { quantity: 3, item: "Apples"}, { quantity: 10, item: "Oranges"}];
 
 const todos = [
   {completed: false, task: "Finish the Lists & Tables checkpoint"},
@@ -23,18 +25,7 @@ const todos = [
 
 
 function App() {
-  const notifications = ["You received a package", "The weather is sunny"];
-  const name = "Jessica";
-  const url = "https://johmert.github.io/portfolio";
-  const linkText = "your portfolio"
-  const element = (
-    <p>
-      {" "}
-      Please visit <a href={url}>{linkText}</a>.
-    </p>
-  );
-const groceryItems = [{quantity: 6, item: "Bananas"}, { quantity: 3, item: "Apples"}, { quantity: 10, item: "Oranges"}];
-  return (
+    return (
     <>
     <Greeting language="es" />
     <Greeting language="fr" />
