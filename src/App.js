@@ -12,13 +12,18 @@ function Notifications({ notifications }) {
       <p>You have {notifications.length} notification(s) today!</p>
     )
   );
-  /*
-  if(notifications.length > 0){
-    return <p>You have {notifications.length} notification(s) today!</p>;
-  }
-  return null;
-  */
 }
+
+function TodoList({todos}){
+  const items = todos.map((item, index) => <li key={index}>{item}</li>);
+  return <ul>{items}</ul>
+}
+
+const todos = [
+  "Finish the Lists & Tables checkpoint",
+  "Clean my desk",
+  "Make lunch"
+];
 
 
 function App() {
@@ -32,7 +37,7 @@ function App() {
       Please visit <a href={url}>{linkText}</a>.
     </p>
   );
-  const groceryItems = ["Bananas", "Apples", "Oranges"];
+const groceryItems = [{quantity: 6, item: "Bananas"}, { quantity: 3, item: "Apples"}, { quantity: 10, item: "Oranges"}];
   return (
     <>
     <Greeting language="es" />
@@ -42,6 +47,7 @@ function App() {
     {element}
     <Notifications notifications={notifications} />
     <GroceryList items={groceryItems} />
+    <TodoList todos={todos} />
     </>
     );
 }
